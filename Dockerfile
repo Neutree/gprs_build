@@ -5,7 +5,7 @@ MAINTAINER Neucrack CZD666666@gmail.com
 # ENV PATH=
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq \
         build-essential \
         git \
         gcc-multilib \
