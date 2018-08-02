@@ -33,6 +33,6 @@ RUN add-apt-repository ppa:git-core/ppa \
     && rm -rf /opt/GPRS_CSDTK \
     && ls -al /opt/CSDTK \
     && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /tmp
+    && rm -rf /tmp \
     && echo "build complete"
 
