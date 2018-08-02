@@ -5,7 +5,7 @@ MAINTAINER Neucrack CZD666666@gmail.com
 # ENV PATH=
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends -qq \
         software-properties-common \
         build-essential \
         git \
@@ -17,7 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
 
 RUN add-apt-repository ppa:git-core/ppa \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         git-lfs \
     && git lfs install \
     && git clone https://github.com/Ai-Thinker-Open/GPRS_CSDTK.git /opt/GPRS_CSDTK \
@@ -26,7 +26,11 @@ RUN add-apt-repository ppa:git-core/ppa \
     && mkdir /projects \
     && cd /opt/CSDTK \
     && ./setup.sh ./ /projects \
-    && rm -rf /opt/GPRS_CSDTK \
+    && ehco "setup complete, now clean" \
     && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove tar curl software-properties-common \
+    && echo "rm" \
+    && rm -rf /opt/GPRS_CSDTK \
+    && ls -al /opt/CSDTK \
     && rm -r /var/lib/apt/lists/*
+    && echo "build complete"
 
