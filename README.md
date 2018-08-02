@@ -5,11 +5,15 @@ Docker build environment for Ai-Thinker A9/A9G (RDA8955)
 
 We can do more awsome works by docker image, e.g.
 
-* Set up build evironment faster easier
-* Compile on cloud 
-* Make automatic testing easier
+* Set up build evironment faster and easier  without affecting the host (physical machine/PC) environment
+* No platform limitation, you just need to install docker
+* Makes automatic testing easier
 
 ## Usage
+
+### 0. Install docker
+
+Just follow [official doc here](https://docs.docker.com/engine/installation/)
 
 ### 1. Get build environment docker image
 
