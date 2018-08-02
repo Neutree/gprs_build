@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update \
         gcc-multilib \
         g++-multilib \
         lib32z1 \
-        curl \
+        curl
 
 
 RUN add-apt-repository ppa:git-core/ppa \
@@ -28,5 +28,5 @@ RUN add-apt-repository ppa:git-core/ppa \
     && ./setup.sh ./ /projects \
     && rm -rf /opt/GPRS_CSDTK \
     && DEBIAN_FRONTEND=noninteractive apt purge -y --auto-remove tar curl software-properties-common \
-    rm -r /var/lib/apt/lists/* \
+    rm -r /var/lib/apt/lists/*
 
