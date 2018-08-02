@@ -17,7 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
     && cd /opt/GPRS_CSDTK/CSDTK \
     && ./setup.sh ./ /projects \
     && echo "setup complete, now clean" \
-    && DEBIAN_FRONTEND=noninteractive apt-get purge -y curl --autoremove \
+    && DEBIAN_FRONTEND=noninteractive apt-get autoremove -y --purge \
     && DEBIAN_FRONTEND=noninteractive apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp \
