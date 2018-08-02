@@ -4,14 +4,13 @@ MAINTAINER Neucrack CZD666666@gmail.com
 
 # ENV PATH=
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends -qq \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
         build-essential \
         git \
         gcc-multilib \
         g++-multilib \
         lib32z1 \
-        curl \
     && git clone https://github.com/Ai-Thinker-Open/GPRS_CSDTK.git /opt/GPRS_CSDTK \
     && cd /opt/GPRS_CSDTK && pwd && ls -al \
     && mkdir /projects \
