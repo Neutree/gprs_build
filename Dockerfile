@@ -12,7 +12,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt update \
         gcc-multilib \
         g++-multilib \
         lib32z1 \
-        curl
+        curl \
+        tar
 
 RUN add-apt-repository ppa:git-core/ppa \
     && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
@@ -26,6 +27,6 @@ RUN add-apt-repository ppa:git-core/ppa \
     && cd /opt/CSDTK \
     && ./setup.sh ./ /projects \
     && rm -rf /opt/GPRS_CSDTK \
-    && DEBIAN_FRONTEND=noninteractive apt purge -y --auto-remove curl software-properties-common \
+    && DEBIAN_FRONTEND=noninteractive apt purge -y --auto-remove tar curl software-properties-common \
     rm -r /var/lib/apt/lists/* \
 
