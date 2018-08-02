@@ -23,7 +23,7 @@ RUN add-apt-repository ppa:git-core/ppa \
     && git clone https://github.com/Ai-Thinker-Open/GPRS_CSDTK.git /opt/GPRS_CSDTK \
     && cd /opt/GPRS_CSDTK && pwd && ls -al \
     && mkdir /opt/CSDTK \
-    && tar -xzvf CSDTK_Linux.tar.gz /opt/CSDTK \
+    && tar -xzvf CSDTK_Linux.tar.gz -C /opt/CSDTK \
     && mkdir /projects \
     && cd /opt/CSDTK \
     && ./setup.sh ./ /projects \
