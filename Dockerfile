@@ -26,7 +26,7 @@ RUN add-apt-repository ppa:git-core/ppa \
     && mkdir /projects \
     && cd /opt/CSDTK \
     && ./setup.sh ./ /projects \
-    && ehco "setup complete, now clean" \
+    && echo "setup complete, now clean" \
     && DEBIAN_FRONTEND=noninteractive apt-get purge -y --auto-remove curl software-properties-common \
     && echo "rm" \
     && rm -rf /opt/GPRS_CSDTK \
