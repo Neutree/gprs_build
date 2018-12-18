@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
         gcc-multilib \
         g++-multilib \
         lib32z1 \
+        python \
     && git clone https://github.com/Ai-Thinker-Open/GPRS_CSDTK.git /opt/GPRS_CSDTK \
     && cd /opt/GPRS_CSDTK && pwd && ls -al \
     && mkdir /projects \
