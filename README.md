@@ -31,7 +31,7 @@ docker pull daocloud.io/neucrack/gprs_build
 put you project in a projects folder, like `~/projects`
 
 ```
-docker run -it --name gprs_builder -v ~/projects:/projects neucrack/gprs_build /bin/bash
+docker run -it --name gprs_builder --rm -v ~/projects:/projects neucrack/gprs_build /bin/bash
 ```
 
 ### compile
